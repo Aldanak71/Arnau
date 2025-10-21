@@ -197,10 +197,10 @@ $(document).ready(function () {
           food[i][3] +
           '<p></div><i class="fas fa-rupee-sign"> ' +
           food[i][2] +
-          '</i></p>  </div>  <div class="col-2"> <p class="text-muted-small" > <i class="fas fa-rupee-sign"></i> ' +
+          '</i></p>  </div>  <div class="col-2"> <p class="text-muted-small" > <i class="tenge"></i> ' +
           food[i][1] * food[i][2] +
           '</p>  <span class="cartQuantity"> ' +
-          " <span> Qty : </span>" +
+          " <span> клв : </span>" +
           food[i][1] +
           '</span> </div>  </div> <hr class="cartHr">';
         $(".cartContentDiv").append(cartTxt);
@@ -222,9 +222,9 @@ $(document).ready(function () {
     }
     $(".totalAmountDiv").empty();
     $(".totalAmountDiv").append(
-      '<span class="totalAmountText">TOTAL AMOUNT : </span><br/>' +
-        '<i class="fas fa-rupee-sign"></i> ' +
-        totalAmount
+      '<span class="totalAmountText">ОБЩАЯ СУММА : </span><br/>' +
+        '<i class="tenge"></i> ' +
+        totalAmount 
     );
   }
 });
@@ -239,7 +239,7 @@ function openWhatsapp() {
     let total = 0;
     let address = $("#address")[0].value;
     let note = $("#note")[0].value;
-    let wTxt = "*name*               *quantity* \n";
+    let wTxt = "*тағам аты*            *саны* \n";
 
     for (var i = 0; i < food.length; i++) {
       let name = food[i][0];
@@ -254,16 +254,19 @@ function openWhatsapp() {
     } else {
       wTxt =
         wTxt +
-        "\n *Total Bill: " +
+        "\n *Барлық сумма: " +
         total +
-        "*" +
-        "\n\n Address: " +
+        " тг*" +
+        
+         "\n *доставка 500тг*" +
+        "\n\n Адрес: " +
         address +
-        "\n Note: " +
-        note;
+        "\n Коментарий: " +
+        note
+        ;
     }
 
     let wTxtEncoded = encodeURI(wTxt);
-    window.open("https://wa.me/917428789065?text=" + wTxtEncoded);
+    window.open("https://wa.me/7054824966?text=" + wTxtEncoded);
   }
 }
